@@ -32,23 +32,8 @@ class SimpleCalculator
 
 end
 
-class FancyCalculator
+class FancyCalculator < SimpleCalculator
 
-  def add(first_number, second_number)
-    first_number + second_number
-  end
-
-  def subtract(first_number, second_number)
-    first_number - second_number
-  end
-
-  def multiply(first_number, second_number)
-    first_number * second_number
-  end
-
-  def divide(first_number, second_number)
-    first_number / second_number
-  end
 
   def square_root(number)
     Math.sqrt(number)
@@ -57,4 +42,24 @@ class FancyCalculator
 end
 
 # Write your own driver code below:
+
+fcalc = FancyCalculator.new
+if fcalc.square_root(12) == 3.4641016151377544
+  puts "Success"
+else
+  puts "F"
+end
+puts fcalc.subtract(1, 2)
+if fcalc.subtract(1, 2) == -1
+  puts "Success"
+else
+  puts "F"
+end
+if fcalc.divide(3, 1) == 3
+  puts "Success"
+else
+  puts "f"
+end
+
+
 

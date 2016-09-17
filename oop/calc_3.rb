@@ -24,52 +24,13 @@ class SimpleCalculator
 
 end
 
-class FancyCalculator
-
-  def add(first_number, second_number)
-    first_number + second_number
-  end
-
-  def subtract(first_number, second_number)
-    first_number - second_number
-  end
-
-  def multiply(first_number, second_number)
-    first_number * second_number
-  end
-
-  def divide(first_number, second_number)
-    first_number / second_number
-  end
-
+class FancyCalculator < SimpleCalculator
   def square_root(number)
     Math.sqrt(number)
   end
-
 end
 
-class WhizBangCalculator
-
-  def add(first_number, second_number)
-    first_number + second_number
-  end
-
-  def subtract(first_number, second_number)
-    first_number - second_number
-  end
-
-  def multiply(first_number, second_number)
-    first_number * second_number
-  end
-
-  def divide(first_number, second_number)
-    first_number / second_number
-  end
-
-  def square_root(number)
-    Math.sqrt(number)
-  end
-
+class WhizBangCalculator < FancyCalculator
   def hypotenuse(first_number, second_number)
     Math.hypot(first_number, second_number)
   end
@@ -79,8 +40,53 @@ class WhizBangCalculator
     exponent_number.times { total = multiply(total,first_number) }
     total
   end
-
 end
 
 # Copy your driver code from the previous exercise and more below:
+fcalc = FancyCalculator.new
+if fcalc.square_root(12) == 3.4641016151377544
+  puts "Success"
+else
+  puts "F"
+end
+puts fcalc.subtract(1, 2)
+if fcalc.subtract(1, 2) == -1
+  puts "Success"
+else
+  puts "F"
+end
+if fcalc.divide(3, 1) == 3
+  puts "Success"
+else
+  puts "f"
+end
 
+
+whiz = WhizBangCalculator.new
+if whiz.square_root(12) == 3.4641016151377544
+  puts "Success"
+else
+  puts "F"
+end
+puts whiz.subtract(1, 2)
+if whiz.subtract(1, 2) == -1
+  puts "Success"
+else
+  puts "F"
+end
+if whiz.divide(3, 1) == 3
+  puts "Success"
+else
+  puts "f"
+end
+puts whiz.exponent(2, 2)
+if whiz.exponent(2, 2) == 4
+  puts "Success"
+else puts "F"
+end
+puts whiz.hypotenuse(3, 4)
+if whiz.hypotenuse(3, 4) == 5
+  puts "Success"
+else
+  puts "F"
+end
